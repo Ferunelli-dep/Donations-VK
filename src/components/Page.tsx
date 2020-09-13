@@ -22,11 +22,6 @@ const Page = (props: IPageProps) => {
   return (
     <div className={classes.page}>
       <HeadBar title={title} />
-      <InfoButton
-        Icon={<EventIcon />}
-        title="Название сбора"
-        description={'Описание сбора'}
-      />
       {children}
     </div>
   );
