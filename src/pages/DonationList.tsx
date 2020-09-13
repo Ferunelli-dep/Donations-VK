@@ -1,6 +1,8 @@
 import React from 'react';
 import BlueButton from '../components/BlueButton';
 import { makeStyles } from '@material-ui/core';
+import Page from "../components/Page";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   container: {
@@ -22,6 +24,8 @@ const useStyles = makeStyles({
 const DonationList = () => {
   const classes = useStyles();
   return (
+      <Page title={'Пожертвования'}>
+
     <div className={classes.container}>
       <div className={classes.text}>
         <span>
@@ -29,9 +33,12 @@ const DonationList = () => {
         </span>
       </div>
       <div className={classes.blueButton}>
-        <BlueButton title={'Создать сбор'} />
+        <Link to={'/DT'}>
+          <BlueButton title={'Создать сбор'} />
+        </Link>
       </div>
     </div>
+      </Page>
   );
 };
 

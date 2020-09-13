@@ -4,6 +4,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import c from 'classnames';
+import { Link } from "react-router-dom";
 
 interface IProps {
   title: string;
@@ -50,6 +51,10 @@ const useStyles = makeStyles((theme) => {
       padding: '20px 0',
       borderBottom: `1px solid ${theme.palette.grey[200]}`,
     },
+    link: {
+      textDecoration: 'none',
+      color: 'black'
+    },
   };
 });
 
@@ -58,6 +63,7 @@ const HeadBar = (props: IProps) => {
   const classes = useStyles();
 
   return (
+      <Link to={'/'} className={classes.link}>
     <div className={classes.root}>
       {hasPrev && <ArrowBackIosIcon className={classes.backButton} />}
       <ButtonGroup
@@ -73,6 +79,7 @@ const HeadBar = (props: IProps) => {
       </ButtonGroup>
       {title}
     </div>
+      </Link>
   );
 };
 

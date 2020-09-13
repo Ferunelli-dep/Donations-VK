@@ -4,6 +4,8 @@ import UploadFile from '../components/UploadFile';
 import InputField from '../components/InputField';
 import BlueButton from '../components/BlueButton';
 import { IField } from '../types/types';
+import Page from "../components/Page";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   container: {
@@ -44,6 +46,7 @@ const TargetDonation = () => {
   ];
 
   return (
+      <Page title={'Целевой сбор'}>
     <div className={classes.container}>
       <div className={classes.elements}>
         <UploadFile />
@@ -56,9 +59,12 @@ const TargetDonation = () => {
         );
       })}
       <div className={classes.elements}>
-        <BlueButton title={'Далее'} />
+        <Link to={'/TDE'}>
+          <BlueButton title={'Далее'} />
+        </Link>
       </div>
     </div>
+      </Page>
   );
 };
 

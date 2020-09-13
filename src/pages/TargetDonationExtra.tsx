@@ -1,9 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import {FormControl, FormControlLabel, FormLabel, makeStyles, Radio, RadioGroup} from '@material-ui/core';
 import TargetDonation from './TargetDonation';
 import InputField from '../components/InputField';
 import BlueButton from '../components/BlueButton';
 import {IField} from "../types/types";
+import Page from "../components/Page";
 
 const useStyles = makeStyles({
   container: {
@@ -26,13 +27,22 @@ const TargetDonationExtra = () => {
   const classes = useStyles();
 
   return (
+      <Page title={'Дополнительно'}>
     <div className={classes.container}>
       <div className={classes.elements}>
         <InputField title={'Автор'} placeholder={'Имя автора'} />
       </div>
       <div className={classes.elements}>
         <div>
-            
+            <div>
+                <FormControl component="fieldset">
+                    <FormLabel component="legend">Сбор завершится</FormLabel>
+                    <RadioGroup aria-label="gender" name="gender1" /*value={value} onChange={handleChange}*/>
+                        <FormControlLabel value="female" control={<Radio />} label="Когда соберем сумму" />
+                        <FormControlLabel value="male" control={<Radio />} label="В опредленную дату" />
+                    </RadioGroup>
+                </FormControl>
+            </div>
         </div>
       </div>
       <div className={classes.elements}>
@@ -42,6 +52,7 @@ const TargetDonationExtra = () => {
         <BlueButton title={'Создать сбор'} />
       </div>
     </div>
+</Page>
   );
 };
 
