@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, IconButton, ButtonGroup } from '@material-ui/core';
 import React from 'react';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import CloseIcon from '@material-ui/icons/Close';
@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => {
       color: 'white',
       margin: '0 5px',
     },
+    iconButton: {
+      width: 30,
+      height: 30,
+      '&:not(:first-child)': {},
+    },
     iconClose: {
       marginLeft: 5,
       position: 'relative',
@@ -55,10 +60,17 @@ const HeadBar = (props: IProps) => {
   return (
     <div className={classes.root}>
       {hasPrev && <ArrowBackIosIcon className={classes.backButton} />}
-      <div className={classes.buttonsWrapper}>
-        <MoreHorizIcon className={classes.icon} />
-        <CloseIcon className={c(classes.iconClose, classes.icon)} />
-      </div>
+      <ButtonGroup
+        className={classes.buttonsWrapper}
+        color="inherit"
+        variant="contained">
+        <IconButton className={classes.iconButton}>
+          <MoreHorizIcon className={classes.icon} />
+        </IconButton>
+        <IconButton className={classes.iconButton}>
+          <CloseIcon className={c(classes.iconClose, classes.icon)} />
+        </IconButton>
+      </ButtonGroup>
       {title}
     </div>
   );
