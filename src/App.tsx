@@ -8,7 +8,7 @@ import TargetDonationExtra from './pages/TargetDonationExtra';
 function App() {
   return (
     <Page title={'Пожертвования'}>
-      <TargetDonation />
+      <TargetDonationExtra />
     </Page>
   );
 }
