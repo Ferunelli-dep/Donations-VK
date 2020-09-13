@@ -3,38 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import UploadFile from '../components/UploadFile';
 import InputField from '../components/InputField';
 import BlueButton from '../components/BlueButton';
-
-const TargetDonation = () => {
-  const classes = useStyles();
-  return (
-    <div className={classes.container}>
-      <div className={classes.elements}>
-        <UploadFile />
-      </div>
-      <div className={classes.elements}>
-        <InputField title={'Название сбора'} placeholder={'Название сбора'} />
-      </div>
-      <div className={classes.elements}>
-        <InputField title={'Сумма, $'} placeholder={'Сколько нужно собрать?'} />
-      </div>
-      <div className={classes.elements}>
-        <InputField title={'Цель'} placeholder={'Например, лечение человека'} />
-      </div>
-      <div className={classes.elements}>
-        <InputField
-          title={'Описание'}
-          placeholder={'На что пойдут деньги и как они кому-то помогут?'}
-        />
-      </div>
-      <div className={classes.elements}>
-        <InputField title={'Куда получать деньги'} placeholder={''} />
-      </div>
-      <div className={classes.elements}>
-        <BlueButton title={'Далее'} />
-      </div>
-    </div>
-  );
-};
+import { IField } from '../types/types';
 
 const useStyles = makeStyles({
   container: {
@@ -47,5 +16,50 @@ const useStyles = makeStyles({
     marginTop: '5px',
   },
 });
+
+const TargetDonation = () => {
+  const classes = useStyles();
+
+  const fields: IField[] = [
+    {
+      title: 'Название сбора',
+      placeholder: 'Название сбора',
+    },
+    {
+      title: 'Сумма, $',
+      placeholder: 'Сколько нужно собрать?',
+    },
+    {
+      title: 'Цель',
+      placeholder: 'Например, лечение человека',
+    },
+    {
+      title: 'Описание',
+      placeholder: 'На что пойдут деньги и как они кому-то помогут?',
+    },
+    {
+      title: 'Куда получать деньги',
+      placeholder: '',
+    },
+  ];
+
+  return (
+    <div className={classes.container}>
+      <div className={classes.elements}>
+        <UploadFile />
+      </div>
+      {fields.map(({ title, placeholder }, id) => {
+        return (
+          <div className={classes.elements} key={id}>
+            <InputField title={title} placeholder={placeholder} />
+          </div>
+        );
+      })}
+      <div className={classes.elements}>
+        <BlueButton title={'Далее'} />
+      </div>
+    </div>
+  );
+};
 
 export default TargetDonation;
