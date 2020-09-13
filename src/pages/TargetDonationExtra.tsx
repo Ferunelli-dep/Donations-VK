@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import TargetDonation from './TargetDonation';
 import InputField from '../components/InputField';
 import BlueButton from '../components/BlueButton';
+import {IField} from "../types/types";
 
 const useStyles = makeStyles({
   container: {
@@ -23,13 +24,16 @@ const useStyles = makeStyles({
 
 const TargetDonationExtra = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.container}>
       <div className={classes.elements}>
         <InputField title={'Автор'} placeholder={'Имя автора'} />
       </div>
       <div className={classes.elements}>
-        <div></div>
+        <div>
+            
+        </div>
       </div>
       <div className={classes.elements}>
         <InputField title={'Дата окончания'} placeholder={'Выберите дату'} />

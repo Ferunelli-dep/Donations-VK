@@ -5,6 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCrosshairs } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarMinus } from '@fortawesome/free-solid-svg-icons';
 
+
+const useStyles = makeStyles({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: '300px',
+  },
+  button: {
+    width: '90%',
+  },
+});
+
 const DonationType = () => {
   const classes = useStyles();
   return (
@@ -26,17 +39,5 @@ const DonationType = () => {
     </div>
   );
 };
-
-const useStyles = makeStyles({
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginTop: '300px',
-  },
-  button: {
-    width: '90%',
-  },
-});
 
 export default DonationType;
