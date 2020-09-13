@@ -1,7 +1,8 @@
 import { makeStyles } from '@material-ui/core';
 import React, { ReactNode } from 'react';
-import HeadBar from '../components/HeadBar';
-import UploadFile from '../components/UploadFile';
+import HeadBar from './HeadBar';
+import InfoButton from './InfoButton';
+import EventIcon from '@material-ui/icons/Event';
 
 interface IPageProps {
   children?: ReactNode;
@@ -21,7 +22,11 @@ const Page = (props: IPageProps) => {
   return (
     <div className={classes.page}>
       <HeadBar title={title} />
-      <UploadFile />
+      <InfoButton
+        Icon={<EventIcon />}
+        title="Название сбора"
+        description={'Описание сбора'}
+      />
       {children}
     </div>
   );
