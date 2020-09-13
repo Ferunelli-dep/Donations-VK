@@ -1,6 +1,5 @@
 import React from 'react';
-import {makeStyles} from "@material-ui/core";
-import TargetDonation from "./TargetDonation";
+import {makeStyles, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio} from "@material-ui/core";
 import InputField from "../components/InputField";
 import BlueButton from "../components/BlueButton";
 
@@ -13,7 +12,13 @@ const TargetDonationExtra = () => {
             </div>
             <div className={classes.elements}>
                 <div>
-
+                    <FormControl component="fieldset">
+                        <FormLabel component="legend">Сбор завершится</FormLabel>
+                        <RadioGroup aria-label="gender" name="gender1" /*value={value} onChange={handleChange}*/>
+                            <FormControlLabel value="female" control={<Radio />} label="Когда соберем сумму" />
+                            <FormControlLabel value="male" control={<Radio />} label="В опредленную дату" />
+                        </RadioGroup>
+                    </FormControl>
                 </div>
             </div>
             <div className={classes.elements}>
@@ -38,7 +43,7 @@ const useStyles = makeStyles({
     },
     button: {
        width: '90%',
-       marginTop: '300px',
+       marginTop: '340px',
     },
 
 });
