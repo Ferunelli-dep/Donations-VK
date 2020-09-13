@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => {
       fontWeight: 500,
       width: props.inline ? undefined : '100%',
       textTransform: 'none',
+      '&:focus': {
+        backgroundColor: '#4986CC',
+      },
     }),
   };
 });

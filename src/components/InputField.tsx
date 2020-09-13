@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => {
     root: {
       backgroundColor: '#F2F3F5',
       width: '100%',
-      padding: 8,
+      padding: '5px 10px',
       borderRadius: 10,
-      fontSize: 18,
+      fontSize: 16,
       color: '#818C99',
       marginBottom: 12,
       border: '1px solid rgba(0, 0, 0, .12)',

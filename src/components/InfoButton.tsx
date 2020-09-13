@@ -11,8 +11,8 @@ interface IProps {
 const useStyles = makeStyles({
   root: {
     backgroundColor: '#F5F5F5',
-    borderRadius: 8,
-    border: '1px solid #DDD',
+    borderRadius: 10,
+    border: '1px solid #FFFFFF',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -27,14 +27,17 @@ const useStyles = makeStyles({
   icon: {
     color: '#3F8AE0',
     marginRight: 14,
+    fontSize: 20,
   },
   title: {
     fontSize: 16,
     fontWeight: 700,
+    textTransform: 'none',
   },
   description: {
     color: '#6D7885',
     fontSize: 12,
+    textTransform: 'none',
   },
   nextIcon: {
     color: '#AAA',
